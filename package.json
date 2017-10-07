@@ -1,0 +1,4 @@
+{
+  "name": "mqtt-timeseries-leveldb",
+  "description": "writes mqtt timeseries messages into leveldb"
+}
