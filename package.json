@@ -58,7 +58,8 @@
     "files": [
       "build/*-test.js"
     ],
-    "presets": [],
+    "presets": [
+    ],
     "require": [
       "babel-register"
     ]
