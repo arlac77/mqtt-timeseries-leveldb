@@ -40,7 +40,7 @@
     "timeseries"
   ],
   "dependencies": {
-    "leveldown": "^2.0.0",
+    "leveldown": "^1.9.0",
     "levelup": "^1.3.9",
     "mqtt": "^2.13.1"
   },
@@ -58,8 +58,7 @@
     "files": [
       "build/*-test.js"
     ],
-    "presets": [
-    ],
+    "presets": [],
     "require": [
       "babel-register"
     ]
