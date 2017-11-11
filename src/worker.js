@@ -18,13 +18,14 @@ export async function worker(leveldb, paths, options) {
       const amount = data.value;
       const key = `${topic}/${date.getTime() /*.padStart(10, '0')*/}`;
 
+      //  console.log(`write ${key} = ${amount}`);
+
       inserts.push({ type: 'put', key, value: amount });
 
       leveldb.batch(inserts, err => {
         if (err) {
-          console.log(err);
+          reject(err);
         }
-        console.log(key);
       });
     });
   });

@@ -2,6 +2,7 @@ import test from 'ava';
 import { worker } from '../src/worker';
 
 const levelup = require('levelup');
+const leveldown = require('leveldown');
 const path = require('path');
 const mqtt = require('mqtt');
 
@@ -12,9 +13,11 @@ test.cb('write', t => {
   const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   const dates = [];
 
-  t.plan(1);
+  t.plan(13);
 
-  const leveldb = levelup(path.join(__dirname, '../build', 'leveldb'));
+  const leveldb = levelup(
+    leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
+  );
 
   worker(leveldb, [PATH_1], { url: MQTT_BROKER_URL });
 
@@ -23,12 +26,8 @@ test.cb('write', t => {
   client.on('connect', () => {
     let count = 0;
 
-    let d = new Date();
-    dates.push(d);
-
-    client.publish(PATH_1, JSON.stringify({ date: d, value: values[count++] }));
-    setTimeout(() => {
-      let d = new Date();
+    setInterval(() => {
+      const d = new Date();
       dates.push(d.getTime());
       client.publish(
         PATH_1,
@@ -47,16 +46,20 @@ test.cb('write', t => {
 
     readStream.on('data', data => {
       //console.log(data.key + ' = ' + data.value);
-      const date = parseInt(data.key.substring(PATH_1.length + 1), 10);
+      const date = parseInt(
+        data.key.toString().substring(PATH_1.length + 1),
+        10
+      );
+      //console.log(data.key.toString() + ' = ' + data.value);
 
       const i = dates.indexOf(date);
 
       if (i >= 0) {
-        console.log(`${date} -> ${i}`);
+        //console.log(`${date} -> ${i}`);
 
-        t.is(parseInt(data.value, 10), values[i]);
+        t.is(parseInt(data.value.toString(), 10), values[i]);
 
-        if (data.value == values[i]) {
+        if (parseInt(data.value.toString(), 10) == values[i]) {
           console.log(`${date} <> ${values[i]}`);
 
           if (++matches === 2) {
