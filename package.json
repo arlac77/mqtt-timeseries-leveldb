@@ -42,7 +42,7 @@
     "timeseries"
   ],
   "dependencies": {
-    "leveldown": "^2.0.1",
+    "leveldown": "^2.0.2",
     "levelup": "^2.0.1",
     "mqtt": "^2.13.1"
   },
