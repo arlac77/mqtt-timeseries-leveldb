@@ -20,16 +20,16 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
+    "ava": "0.23.0",
+    "babel-preset-env": "^1.6.1",
     "jsdoc-babel": "^0.3.0",
     "jsdoc-to-markdown": "^3.0.2",
     "markdown-doctest": "^0.9.1",
     "nyc": "^11.3.0",
     "rollup": "^0.51.8",
     "rollup-plugin-multi-entry": "^2.0.2",
-    "semantic-release": "^9.1.1",
-    "xo": "^0.19.0",
-    "babel-preset-env": "^1.6.1"
+    "semantic-release": "10.0.1",
+    "xo": "^0.19.0"
   },
   "engines": {
     "node": ">=8.9.1"
@@ -42,9 +42,9 @@
     "timeseries"
   ],
   "dependencies": {
-    "leveldown": "^2.0.2",
+    "leveldown": "^2.1.0",
     "levelup": "^2.0.1",
-    "mqtt": "^2.13.1"
+    "mqtt": "^2.14.0"
   },
   "contributors": [
     {
