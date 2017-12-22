@@ -1,5 +1,14 @@
 const mqtt = require('mqtt');
 
+/**
+ * sets up a mqtt client to listen for topics
+ *
+ * @param {Levelup} leveldb
+ * @param {string[]} paths
+ * @param {Object} options
+ * @param {string} options.url
+ * @return {Client} mqtt client
+ */
 export async function worker(leveldb, paths, options) {
   const client = mqtt.connect(options.url);
 
