@@ -22,6 +22,8 @@ mqtt-timeseries-leveldb
 writes mqtt timeseries messages into leveldb
 
 
+# API
+
 # install
 
 With [npm](http://npmjs.org) do:
