@@ -1,14 +1,20 @@
 {
   "name": "mqtt-timeseries-leveldb",
+  "version": "0.0.0-semantic-release",
+  "main": "dist/worker.js",
+  "module": "src/worker.js",
   "description": "writes mqtt timeseries messages into leveldb",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arlac77/mqtt-timeseries-leveldb.git"
-  },
-  "bugs": {
-    "url": "https://github.com/arlac77/mqtt-timeseries-leveldb/issues"
-  },
-  "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
+  "keywords": [
+    "mqtt",
+    "timeseries"
+  ],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
+  "license": "BSD-2-Clause",
   "scripts": {
     "cover": "nyc --temp-directory build/nyc ava",
     "precover": "rollup -c tests/rollup.config.js",
@@ -19,6 +25,11 @@
     "docs": "documentation readme src/worker.js --section=API",
     "semantic-release": "semantic-release",
     "lint": "documentation lint src/worker.js"
+  },
+  "dependencies": {
+    "leveldown": "^2.1.1",
+    "levelup": "^2.0.1",
+    "mqtt": "^2.15.0"
   },
   "devDependencies": {
     "ava": "^0.24.0",
@@ -33,28 +44,14 @@
   "engines": {
     "node": ">=8.9.3"
   },
-  "version": "0.0.0-semantic-release",
-  "main": "dist/worker.js",
-  "module": "src/worker.js",
-  "keywords": [
-    "mqtt",
-    "timeseries"
-  ],
-  "dependencies": {
-    "leveldown": "^2.1.1",
-    "levelup": "^2.0.1",
-    "mqtt": "^2.15.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arlac77/mqtt-timeseries-leveldb.git"
   },
-  "contributors": [
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
-  "license": "BSD-2-Clause",
-  "xo": {
-    "space": true
+  "bugs": {
+    "url": "https://github.com/arlac77/mqtt-timeseries-leveldb/issues"
   },
+  "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
   "ava": {
     "files": [
       "build/*-test.js"
@@ -72,6 +69,9 @@
       "lcov"
     ],
     "report-dir": "./build/coverage"
+  },
+  "xo": {
+    "space": true
   },
   "template": {
     "repository": {
