@@ -16,6 +16,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![downloads](http://img.shields.io/npm/dm/mqtt-timeseries-leveldb.svg?style=flat-square)](https://npmjs.org/package/mqtt-timeseries-leveldb)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 # mqtt-timeseries-leveldb
 
 writes mqtt timeseries messages into leveldb
@@ -30,14 +31,14 @@ writes mqtt timeseries messages into leveldb
 
 ## worker
 
-sets up a mqtt client to listen for topics
+Sets up a mqtt client to listen for topics
 
 **Parameters**
 
--   `leveldb` **Levelup** 
--   `paths` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+-   `leveldb` **Levelup** where to put the values
+-   `paths` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** subscriptions to listen for
 -   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `options.url` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+    -   `options.url` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** mqtt connection url
 
 Returns **Client** mqtt client
 
