@@ -12,7 +12,8 @@ const PATH_1 = 'mqtt-timeseries-leveldb/test1';
 test.cb('write + read', t => {
   const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-  t.plan(values.length - 1);
+  let planned = values.length - 1;
+  t.plan(planned);
 
   const leveldb = levelup(
     leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
@@ -20,8 +21,6 @@ test.cb('write + read', t => {
 
   worker(leveldb, [PATH_1], { url: MQTT_BROKER_URL }).then(() => {
     const dates = [];
-
-    //let matches = 0;
 
     const client = mqtt.connect(MQTT_BROKER_URL);
 
@@ -60,7 +59,13 @@ test.cb('write + read', t => {
               if (parseInt(data.value.toString(), 10) == values[i]) {
                 console.log(`${date} <> ${values[i]}`);
 
-                //++matches;
+                planned--;
+                if (planned <= 0) {
+                  console.log(`planned: ${planned}`);
+
+                  t.end();
+                }
+
                 //console.log(`pass ${values.length} ${matches}`);
               }
             }
@@ -69,7 +74,7 @@ test.cb('write + read', t => {
           readStream.on('end', () => {
             console.log(`end`);
             leveldb.close();
-            t.end();
+            //t.end();
           });
         }
       }, 50);
