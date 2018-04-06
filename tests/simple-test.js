@@ -9,10 +9,10 @@ const mqtt = require('mqtt');
 const MQTT_BROKER_URL = 'mqtt://test.mosquitto.org';
 const PATH_1 = 'mqtt-timeseries-leveldb/test1';
 
-test.cb('write', t => {
+test.cb('write + read', t => {
   const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-  t.plan(values.length);
+  t.plan(values.length - 1);
 
   const leveldb = levelup(
     leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
@@ -21,7 +21,7 @@ test.cb('write', t => {
   worker(leveldb, [PATH_1], { url: MQTT_BROKER_URL }).then(() => {
     const dates = [];
 
-    let matches = 0;
+    //let matches = 0;
 
     const client = mqtt.connect(MQTT_BROKER_URL);
 
@@ -60,9 +60,8 @@ test.cb('write', t => {
               if (parseInt(data.value.toString(), 10) == values[i]) {
                 console.log(`${date} <> ${values[i]}`);
 
-                if (++matches === 2) {
-                  t.pass();
-                }
+                //++matches;
+                //console.log(`pass ${values.length} ${matches}`);
               }
             }
           });
