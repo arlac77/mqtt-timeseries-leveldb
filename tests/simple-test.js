@@ -67,6 +67,7 @@ test.cb('write + read', t => {
           });
 
           readStream.on('end', () => {
+            console.log(`end`);
             leveldb.close();
             t.end();
           });
