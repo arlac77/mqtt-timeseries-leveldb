@@ -6,7 +6,6 @@
 [![bithound](https://www.bithound.io/github/arlac77/mqtt-timeseries-leveldb/badges/score.svg)](https://www.bithound.io/github/arlac77/mqtt-timeseries-leveldb)
 [![codecov.io](http://codecov.io/github/arlac77/mqtt-timeseries-leveldb/coverage.svg?branch=master)](http://codecov.io/github/arlac77/mqtt-timeseries-leveldb?branch=master)
 [![Coverage Status](https://coveralls.io/repos/arlac77/mqtt-timeseries-leveldb/badge.svg)](https://coveralls.io/r/arlac77/mqtt-timeseries-leveldb)
-[![Maintainability](https://api.codeclimate.com/v1/badges/ffa8cca9d6160319798f/maintainability)](https://codeclimate.com/github/arlac77/mqtt-timeseries-leveldb/maintainability)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/mqtt-timeseries-leveldb/badge.svg)](https://snyk.io/test/github/arlac77/mqtt-timeseries-leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/mqtt-timeseries-leveldb.svg?style=flat-square)](https://github.com/arlac77/mqtt-timeseries-leveldb/issues)
 [![Stories in Ready](https://badge.waffle.io/arlac77/mqtt-timeseries-leveldb.svg?label=ready&title=Ready)](http://waffle.io/arlac77/mqtt-timeseries-leveldb)
