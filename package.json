@@ -28,7 +28,7 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "dependencies": {
-    "leveldown": "^3.0.0",
+    "leveldown": "^4.0.0",
     "levelup": "^2.0.2",
     "mqtt": "^2.18.0"
   },
