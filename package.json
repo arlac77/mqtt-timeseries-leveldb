@@ -4,10 +4,7 @@
   "main": "dist/worker.js",
   "module": "src/worker.js",
   "description": "writes mqtt timeseries messages into leveldb",
-  "keywords": [
-    "mqtt",
-    "timeseries"
-  ],
+  "keywords": ["mqtt", "timeseries"],
   "contributors": [
     {
       "name": "Markus Felten",
@@ -43,7 +40,7 @@
     "travis-deploy-once": "^5.0.0"
   },
   "engines": {
-    "node": ">=8.11"
+    "node": ">=10.2"
   },
   "repository": {
     "type": "git",
@@ -54,21 +51,13 @@
   },
   "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
   "ava": {
-    "files": [
-      "build/*-test.js"
-    ],
+    "files": ["build/*-test.js"],
     "presets": [],
-    "require": [
-      "babel-register"
-    ]
+    "require": ["babel-register"]
   },
   "nyc": {
-    "include": [
-      "build/*-test.js"
-    ],
-    "reporter": [
-      "lcov"
-    ],
+    "include": ["build/*-test.js"],
+    "reporter": ["lcov"],
     "report-dir": "./build/coverage"
   },
   "xo": {
