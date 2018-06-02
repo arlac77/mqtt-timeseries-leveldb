@@ -1,6 +1,9 @@
 {
   "name": "mqtt-timeseries-leveldb",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/worker.js",
   "module": "src/worker.js",
   "description": "writes mqtt timeseries messages into leveldb",
