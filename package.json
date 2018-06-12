@@ -33,7 +33,7 @@
   "dependencies": {
     "leveldown": "^4.0.0",
     "levelup": "^3.0.1",
-    "mqtt": "^2.18.0"
+    "mqtt": "^2.18.1"
   },
   "devDependencies": {
     "ava": "^0.25.0",
