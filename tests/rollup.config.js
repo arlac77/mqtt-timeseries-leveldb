@@ -5,8 +5,9 @@ export default {
   output: {
     file: 'build/bundle-test.js',
     format: 'cjs',
-    sourcemap: true
+    sourcemap: true,
+    interop: false
   },
   plugins: [multiEntry()],
-  external: ['ava']
+  external: ['ava', 'path', 'levelup', 'leveldown', 'mqtt']
 };

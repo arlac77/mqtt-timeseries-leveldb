@@ -1,4 +1,4 @@
-const { connect } = require('mqtt');
+import { connect } from 'mqtt';
 
 /**
  * Sets up a mqtt client to listen for topics
@@ -10,7 +10,10 @@ const { connect } = require('mqtt');
  * @return {Client} mqtt client
  */
 export async function worker(leveldb, paths, options) {
-  const client = connect(options.url, options);
+  const client = connect(
+    options.url,
+    options
+  );
 
   return new Promise((resolve, reject) => {
     client.on('connect', () => {

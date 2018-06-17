@@ -1,10 +1,9 @@
 import test from 'ava';
 import { worker } from '../src/worker';
-
-const levelup = require('levelup');
-const leveldown = require('leveldown');
-const path = require('path');
-const mqtt = require('mqtt');
+import { connect } from 'mqtt';
+import { join } from 'path';
+import levelup from 'levelup';
+import leveldown from 'leveldown';
 
 const MQTT_BROKER_URL = 'mqtt://test.mosquitto.org';
 const PATH_1 = 'mqtt-timeseries-leveldb/test1';
@@ -15,14 +14,12 @@ test.cb('write + read', t => {
   let planned = values.length - 1;
   t.plan(planned);
 
-  const leveldb = levelup(
-    leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
-  );
+  const leveldb = levelup(leveldown(join(__dirname, '..', 'build', 'leveldb')));
 
   worker(leveldb, [PATH_1], { url: MQTT_BROKER_URL }).then(() => {
     const dates = [];
 
-    const client = mqtt.connect(MQTT_BROKER_URL);
+    const client = connect(MQTT_BROKER_URL);
 
     client.on('connect', () => {
       let count = 0;
