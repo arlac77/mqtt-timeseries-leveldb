@@ -50,7 +50,7 @@
     "rollup-plugin-executable": "^1.2.0"
   },
   "engines": {
-    "node": ">=10.2"
+    "node": ">=10.8"
   },
   "repository": {
     "type": "git",
