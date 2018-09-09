@@ -2,7 +2,10 @@ import { connect } from 'mqtt';
 
 /**
  * Sets up a mqtt client to listen for topics
- *
+ * Entries are constructed in the following way:
+ * <topic>/<time> : <value>
+ * - topic one of the given paths
+ * - time value of Date.getTime()
  * @param {Levelup} leveldb where to put the values
  * @param {string[]} paths subscriptions to listen for
  * @param {Object} options passed to mqtt.connect
@@ -29,7 +32,7 @@ export async function worker(leveldb, paths, options) {
       const key = `${topic}/${date.getTime() /*.padStart(10, '0')*/}`;
       const value = data.value;
 
-      //  console.log(`write ${key} = ${amount}`);
+      // console.log(`write ${key} = ${value}`);
 
       leveldb.put(key, value, err => {
         if (err) {

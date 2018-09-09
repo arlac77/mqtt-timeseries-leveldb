@@ -32,6 +32,11 @@ writes mqtt timeseries messages into leveldb
 ## worker
 
 Sets up a mqtt client to listen for topics
+Entries are constructed in the following way:
+<topic>/<time> : <value>
+
+-   topic one of the given paths
+-   time value of Date.getTime()
 
 ### Parameters
 
