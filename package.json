@@ -61,15 +61,14 @@
   "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
   "ava": {
     "files": [
-      "build/*-test.js"
+      "tests/*-test.js"
     ],
     "presets": [],
     "require": [
-      "babel-register"
-    ]
-  },
-  "xo": {
-    "space": true
+      "esm"
+    ],
+    "babel": false,
+    "compileEnhancements": false
   },
   "template": {
     "repository": {
