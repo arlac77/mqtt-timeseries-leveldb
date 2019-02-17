@@ -1,30 +1,40 @@
-import test from 'ava';
-import { worker } from '../src/worker';
-import { connect } from 'mqtt';
-import { join } from 'path';
-import levelup from 'levelup';
-import leveldown from 'leveldown';
+import test from "ava";
+import { worker } from "../src/worker";
+//import { connect } from "mqtt";
+import connect from "mqtt/lib/connect/index";
 
-const MQTT_BROKER_URL = 'mqtt://test.mosquitto.org';
-const PATH_1 = 'mqtt-timeseries-leveldb/test1';
+import levelup from "levelup";
+import leveldown from "leveldown";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
-test.cb('write + read', t => {
+const here = dirname(fileURLToPath(import.meta.url));
+
+const MQTT_BROKER_URL = "mqtt://test.mosquitto.org";
+const PATH_1 = "mqtt-timeseries-leveldb/test1";
+
+test.cb("write + read", t => {
   const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
   let planned = values.length - 1;
   t.plan(planned);
 
-  const leveldb = levelup(leveldown(join(__dirname, '..', 'build', 'leveldb')));
+  const leveldb = levelup(leveldown(join(here, "..", "build", "leveldb")));
 
   worker(leveldb, [PATH_1], { url: MQTT_BROKER_URL }).then(() => {
     const dates = [];
 
+    console.log("A");
     const client = connect(MQTT_BROKER_URL);
 
-    client.on('connect', () => {
+    client.on("connect", () => {
       let count = 0;
 
+      console.log("B");
+
       let iv = setInterval(() => {
+        console.log("C");
+
         const d = new Date();
         dates.push(d.getTime());
         client.publish(
@@ -36,13 +46,17 @@ test.cb('write + read', t => {
         );
 
         if (count === values.length) {
+          console.log("D");
+
           clearInterval(iv);
           const readStream = leveldb.createReadStream({
             start: `${PATH_1}/0`,
             end: `${PATH_1}/Z`
           });
 
-          readStream.on('data', data => {
+          readStream.on("data", data => {
+            console.log("E");
+
             const date = parseInt(
               data.key.toString().substring(PATH_1.length + 1),
               10
@@ -68,7 +82,7 @@ test.cb('write + read', t => {
             }
           });
 
-          readStream.on('end', () => {
+          readStream.on("end", () => {
             console.log(`end`);
             leveldb.close();
             //t.end();

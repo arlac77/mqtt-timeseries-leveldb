@@ -1,4 +1,4 @@
-import { connect } from 'mqtt';
+import connect from "mqtt/lib/connect/index";
 
 /**
  * Sets up a mqtt client to listen for topics
@@ -19,14 +19,14 @@ export async function worker(leveldb, paths, options) {
   );
 
   return new Promise((resolve, reject) => {
-    client.on('connect', () => {
+    client.on("connect", () => {
       paths.forEach(p => client.subscribe(p));
       resolve(client);
     });
 
-    client.on('error', error => reject(error));
+    client.on("error", error => reject(error));
 
-    client.on('message', (topic, message) => {
+    client.on("message", (topic, message) => {
       const data = JSON.parse(message.toString());
       const date = new Date(data.date);
       const key = `${topic}/${date.getTime() /*.padStart(10, '0')*/}`;

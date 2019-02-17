@@ -4,8 +4,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/worker.js",
-  "module": "src/worker.js",
+  "main": "src/worker.mjs",
+  "module": "src/worker.mjs",
   "description": "writes mqtt timeseries messages into leveldb",
   "keywords": [
     "mqtt",
@@ -20,10 +20,9 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "cover": "c8 --temp-directory build/coverage ava && c8 report -r lcov --temp-directory build/coverage",
-    "docs": "documentation readme src/worker.js --section=API",
-    "lint": "documentation lint src/worker.js",
+    "docs": "documentation readme src/worker.mjs --section=API",
+    "lint": "documentation lint src/worker.mjs",
     "posttest": "npm run prepare && markdown-doctest",
-    "prepare": "rollup -c",
     "test": "ava"
   },
   "dependencies": {
@@ -37,12 +36,6 @@
     "esm": "^3.1.4",
     "levelup": "^4.0.0",
     "markdown-doctest": "^0.9.1",
-    "rollup": "^1.1.2",
-    "rollup-plugin-cleanup": "^3.1.1",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-executable": "^1.4.4",
-    "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
     "semantic-release": "^15.13.3"
   },
   "engines": {
