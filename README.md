@@ -8,11 +8,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffa8cca9d6160319798f/maintainability)](https://codeclimate.com/github/arlac77/mqtt-timeseries-leveldb/maintainability)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/mqtt-timeseries-leveldb/badge.svg)](https://snyk.io/test/github/arlac77/mqtt-timeseries-leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/mqtt-timeseries-leveldb.svg?style=flat-square)](https://github.com/arlac77/mqtt-timeseries-leveldb/issues)
-[![Stories in Ready](https://badge.waffle.io/arlac77/mqtt-timeseries-leveldb.svg?label=ready&title=Ready)](http://waffle.io/arlac77/mqtt-timeseries-leveldb)
 [![Dependency Status](https://david-dm.org/arlac77/mqtt-timeseries-leveldb.svg)](https://david-dm.org/arlac77/mqtt-timeseries-leveldb)
 [![devDependency Status](https://david-dm.org/arlac77/mqtt-timeseries-leveldb/dev-status.svg)](https://david-dm.org/arlac77/mqtt-timeseries-leveldb#info=devDependencies)
 [![docs](http://inch-ci.org/github/arlac77/mqtt-timeseries-leveldb.svg?branch=master)](http://inch-ci.org/github/arlac77/mqtt-timeseries-leveldb)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![downloads](http://img.shields.io/npm/dm/mqtt-timeseries-leveldb.svg?style=flat-square)](https://npmjs.org/package/mqtt-timeseries-leveldb)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
