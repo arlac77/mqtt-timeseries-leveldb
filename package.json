@@ -27,7 +27,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "leveldown": "^4.0.2",
+    "leveldown": "^5.0.0",
     "mqtt": "^2.18.8"
   },
   "devDependencies": {
