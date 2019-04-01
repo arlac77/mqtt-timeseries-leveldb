@@ -33,8 +33,8 @@
     "c8": "^3.4.0",
     "documentation": "^9.3.1",
     "esm": "^3.2.22",
-    "levelup": "^4.0.1",
     "leveldown": "^5.0.0",
+    "levelup": "^4.0.1",
     "markdown-doctest": "^0.9.1",
     "semantic-release": "^15.13.3"
   },
@@ -66,7 +66,7 @@
   },
   "template": {
     "repository": {
-      "url": "https://github.com/arlac77/npm-package-template.git"
+      "url": "https://github.com/arlac77/npm-package-template-esm-only.git"
     },
     "files": [
       {
