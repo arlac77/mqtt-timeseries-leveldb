@@ -22,12 +22,10 @@
     "cover": "c8 --temp-directory build/coverage ava && c8 report -r lcov --temp-directory build/coverage",
     "docs": "documentation readme src/worker.mjs --section=API",
     "lint": "documentation lint src/worker.mjs",
-    "posttest": "npm run prepare && markdown-doctest",
-    "prepare": "rollup -c",
+    "posttest": "markdown-doctest",
     "test": "ava"
   },
   "dependencies": {
-    "leveldown": "^5.0.0",
     "mqtt": "^2.18.8"
   },
   "devDependencies": {
@@ -35,14 +33,9 @@
     "c8": "^3.4.0",
     "documentation": "^9.3.1",
     "esm": "^3.2.22",
-    "levelup": "^4.0.0",
+    "levelup": "^4.0.1",
+    "leveldown": "^5.0.0",
     "markdown-doctest": "^0.9.1",
-    "rollup": "^1.7.4",
-    "rollup-plugin-cleanup": "^3.1.1",
-    "rollup-plugin-commonjs": "^9.2.2",
-    "rollup-plugin-executable": "^1.4.5",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^4.0.1",
     "semantic-release": "^15.13.3"
   },
   "engines": {
