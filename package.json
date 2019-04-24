@@ -33,7 +33,7 @@
     "c8": "^3.5.0",
     "documentation": "^10.0.0",
     "esm": "^3.2.22",
-    "leveldown": "^5.0.0",
+    "leveldown": "^5.0.2",
     "levelup": "^4.0.1",
     "markdown-doctest": "^0.9.1",
     "semantic-release": "^15.13.12"
