@@ -1,7 +1,6 @@
 {
   "name": "mqtt-timeseries-leveldb",
   "version": "0.0.0-semantic-release",
-  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -81,5 +80,6 @@
         }
       }
     ]
-  }
+  },
+  "type": "module"
 }
