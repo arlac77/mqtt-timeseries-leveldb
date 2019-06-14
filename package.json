@@ -52,7 +52,6 @@
   "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
   "ava": {
     "files": [
-      "tests/*-test.js",
       "tests/*-test.mjs"
     ],
     "require": [
@@ -61,7 +60,6 @@
     "babel": false,
     "compileEnhancements": false,
     "extensions": [
-      "js",
       "mjs"
     ]
   },
