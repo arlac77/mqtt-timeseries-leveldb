@@ -1,5 +1,5 @@
 import test from "ava";
-import { worker } from "../src/worker";
+import { worker } from "../src/worker.mjs";
 import connect from "mqtt/lib/connect/index";
 
 import levelup from "levelup";
