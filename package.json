@@ -1,10 +1,11 @@
 {
   "name": "mqtt-timeseries-leveldb",
   "version": "0.0.0-semantic-release",
-  "type": "module",
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
+  "type": "module",
   "main": "src/worker.mjs",
   "module": "src/worker.mjs",
   "description": "writes mqtt timeseries messages into leveldb",
@@ -79,6 +80,5 @@
         }
       }
     ]
-  },
-  "sideEffects": false
+  }
 }
