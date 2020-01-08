@@ -25,7 +25,8 @@
     "docs": "documentation readme src/worker.mjs --section=API",
     "lint": "documentation lint src/worker.mjs",
     "posttest": "markdown-doctest",
-    "test": "ava"
+    "test": "ava",
+    "prepare": "rollup -c"
   },
   "dependencies": {
     "mqtt": "^3.0.0"
