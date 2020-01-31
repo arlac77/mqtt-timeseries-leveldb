@@ -25,12 +25,21 @@
     "docs": "documentation readme src/worker.mjs --section=API",
     "lint": "documentation lint src/worker.mjs",
     "posttest": "markdown-doctest",
-    "test": "ava"
+    "test": "ava",
+    "prepare": "rollup -c",
+    "start": "rollup -c -w"
   },
   "dependencies": {
-    "mqtt": "^3.0.1"
+    "mf-styling": "arlac77/mf-styling",
+    "mqtt": "^3.0.1",
+    "svelte-common": "^1.3.0",
+    "svelte-guard-history-router": "^1.1.11",
+    "svelte-session-manager": "^1.0.5"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@semantic-release/exec": "^5.0.0",
     "ava": "^2.4.0",
     "c8": "^7.0.1",
     "documentation": "^12.1.4",
@@ -38,7 +47,15 @@
     "leveldown": "^5.3.0",
     "levelup": "^4.3.1",
     "markdown-doctest": "^1.0.0",
-    "semantic-release": "^17.0.1"
+    "npm-pkgbuild": "^6.11.4",
+    "rollup": "^1.30.1",
+    "rollup-plugin-consts": "^1.0.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-dev": "^1.1.1",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "semantic-release": "^17.0.1",
+    "svelte": "^3.18.1"
   },
   "engines": {
     "node": ">=12.14.1"
@@ -51,6 +68,37 @@
     "url": "https://github.com/arlac77/mqtt-timeseries-leveldb/issues"
   },
   "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
+  "config": {
+    "base": "/services/mqtt-timeseries-leveldb/",
+    "api": "/services/mqtt-timeseries-leveldb/api",
+    "proxyTarget": "https://somewhere/"
+  },
+  "pacman": {
+    "groups": "{{group}}",
+    "hooks": "pacman/hooks.sh",
+    "installdir": "/services/mqtt-timeseries-leveldb/frontend",
+    "depends": {
+      "systemd": ">=244.1"
+    },
+    "content": {
+      "${installdir}/": {
+        "base": "public"
+      },
+      "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
+    }
+  },
+  "release": {
+    "plugins": [
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --pkgver ${nextRelease.version} pkgbuild pacman makepkg"
+        }
+      ],
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator"
+    ]
+  },
   "ava": {
     "files": [
       "tests/*-test.mjs"

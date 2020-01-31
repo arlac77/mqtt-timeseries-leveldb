@@ -1,0 +1,10 @@
+{
+  "name": "mqtt-timeseries-leveldb",
+  "description": "writes mqtt timeseries messages into leveldb",
+  "icons": [
+    {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    }
+  ]
+}
