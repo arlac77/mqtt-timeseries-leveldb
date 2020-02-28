@@ -49,9 +49,6 @@
   },
   "homepage": "https://github.com/arlac77/mqtt-timeseries-leveldb#readme",
   "template": {
-    "repository": {
-      "url": "https://github.com/arlac77/npm-package-template-esm-only.git"
-    },
     "files": [
       {
         "merger": "Readme",
@@ -63,6 +60,7 @@
           }
         }
       }
-    ]
+    ],
+    "inheritFrom": "arlac77/template-esm-only"
   }
 }
