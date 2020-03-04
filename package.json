@@ -61,6 +61,9 @@
         }
       }
     ],
-    "inheritFrom": "arlac77/template-esm-only"
+    "inheritFrom": [
+      "arlac77/template-esm-only",
+      "arlac77/template-github"
+    ]
   }
 }
