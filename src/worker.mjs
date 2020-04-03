@@ -1,4 +1,4 @@
-import connect from "mqtt/lib/connect/index";
+import connect from "mqtt/lib/connect/index.js";
 
 /**
  * Sets up a mqtt client to listen for topics

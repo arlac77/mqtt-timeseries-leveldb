@@ -27,7 +27,7 @@
     "lint": "documentation lint src/worker.mjs"
   },
   "dependencies": {
-    "mqtt": "^3.0.1"
+    "mqtt": "^3.0.0"
   },
   "devDependencies": {
     "ava": "^3.5.2",
