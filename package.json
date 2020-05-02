@@ -8,7 +8,7 @@
   "type": "module",
   "main": "src/worker.mjs",
   "exports": {
-    ".": "./src/worker.mjs",
+    ".": "src/worker.mjs",
     "./": "./"
   },
   "description": "writes mqtt timeseries messages into leveldb",
