@@ -4,10 +4,8 @@ import connect from "mqtt/lib/connect/index.js";
 
 import levelup from "levelup";
 import leveldown from "leveldown";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-
-const here = dirname(fileURLToPath(import.meta.url));
+import { join } from "path";
+import { mkdirSync } from "fs";
 
 const MQTT_BROKER_URL = "mqtt://test.mosquitto.org";
 const PATH_1 = "mqtt-timeseries-leveldb/test1";
@@ -18,12 +16,16 @@ test.cb("write + read", t => {
   let planned = values.length - 1;
   t.plan(planned);
 
-  const leveldb = levelup(leveldown(join(here, "..", "build", "leveldb")));
+  const dir = "build";
+  try {
+    mkdirSync(dir);
+  }catch {}
+
+  const leveldb = levelup(leveldown(join(dir, "leveldb")));
 
   worker(leveldb, [PATH_1], { url: MQTT_BROKER_URL }).then(() => {
     const dates = [];
 
-    console.log("A");
     const client = connect(MQTT_BROKER_URL);
 
     client.on("connect", () => {
