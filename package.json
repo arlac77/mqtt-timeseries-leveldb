@@ -26,8 +26,8 @@
   "scripts": {
     "test": "ava --timeout 2m",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
-    "docs": "documentation readme src/worker.mjs --section=API",
-    "lint": "documentation lint src/worker.mjs"
+    "docs": "documentation readme ./src/worker.mjs --section=API",
+    "lint": "documentation lint ./src/worker.mjs"
   },
   "dependencies": {
     "mqtt": "^4.0.0"
@@ -38,7 +38,7 @@
     "documentation": "^13.0.0",
     "leveldown": "^5.6.0",
     "levelup": "^4.4.0",
-    "semantic-release": "^17.0.7"
+    "semantic-release": "^17.0.8"
   },
   "engines": {
     "node": ">=12.16.3"
