@@ -19,7 +19,7 @@ test.cb("write + read", t => {
   const dir = "build";
   try {
     mkdirSync(dir);
-  }catch {}
+  } catch {}
 
   const leveldb = levelup(leveldown(join(dir, "leveldb")));
 
@@ -31,11 +31,7 @@ test.cb("write + read", t => {
     client.on("connect", () => {
       let count = 0;
 
-      console.log("B");
-
       let iv = setInterval(() => {
-        console.log("C");
-
         const d = new Date();
         dates.push(d.getTime());
         client.publish(
