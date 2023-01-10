@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arlac77/mqtt-timeseries-leveldb.git"
+    "url": "https://github.com/arlac77/mqtt-timeseries-leveldb"
   },
   "bugs": {
     "url": "https://github.com/arlac77/mqtt-timeseries-leveldb/issues"
