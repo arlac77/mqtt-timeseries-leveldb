@@ -30,7 +30,7 @@
     "lint:docs": "documentation lint ./src**/*.mjs"
   },
   "dependencies": {
-    "mqtt": "^5.0.0"
+    "mqtt": "^5.15.0"
   },
   "devDependencies": {
     "ava": "^6.4.1",
