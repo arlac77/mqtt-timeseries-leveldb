@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "ava": "^6.4.1",
-    "c8": "^10.1.3",
+    "c8": "^11.0.0",
     "documentation": "^14.0.3",
     "leveldown": "^6.1.1",
     "levelup": "^5.1.1",
