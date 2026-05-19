@@ -40,6 +40,11 @@
     "levelup": "^5.1.1",
     "semantic-release": "^25.0.3"
   },
+  "overrides": {
+    "c8": {
+      "yargs": "^18.0.0"
+    }
+  },
   "engines": {
     "node": ">=14.19.1"
   },
