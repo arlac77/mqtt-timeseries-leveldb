@@ -33,7 +33,7 @@
     "mqtt": "^5.16.1"
   },
   "devDependencies": {
-    "ava": "^8.1.1",
+    "ava": "^8.1.2",
     "c8": "^12.0.0",
     "documentation": "^14.0.3",
     "leveldown": "^6.1.1",
